@@ -78,8 +78,8 @@ WSGI_APPLICATION = 'sm7.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'HOST': '3.34.95.117',
-        'NAME': 'sm7_db(test)',
+        'HOST': '35.77.144.191',
+        'NAME': 'sm7_db',
         'USER': 'root',
         'PASSWORD': 'admin123!',
         'PORT': '3306',

@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-^-7f+6)$(9l0lipz8+jf+im-f0=)1+5(ae)&mopz#jze2%b2$*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['3.34.95.117', '127.0.0.1', '10.0.2.2']
 
 
 # Application definition
@@ -77,8 +77,13 @@ WSGI_APPLICATION = 'sm7.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': '3.34.95.117',
+        'NAME': 'sm7_db(test)',
+        'USER': 'root',
+        'PASSWORD': 'admin123!',
+        'PORT': '3306',
+        'OPTIONS': {'charset': 'utf8mb4'},
     }
 }
 

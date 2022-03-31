@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-^-7f+6)$(9l0lipz8+jf+im-f0=)1+5(ae)&mopz#jze2%b2$*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['3.34.95.117', '127.0.0.1', '10.0.2.2', '35.77.144.191']
+ALLOWED_HOSTS = ['3.34.95.117', '127.0.0.1', '10.0.2.2', '35.77.144.191', '61.77.208.139']
 
 
 # Application definition
@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',   # 프레임워크 추가
-    'api'               # 웹앱 추가
+    'api',               # 웹앱 추가
+    'channels',
+    'sm7_channels'
 ]
 
 MIDDLEWARE = [
@@ -69,7 +71,17 @@ TEMPLATES = [
     },
 ]
 
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
+
 WSGI_APPLICATION = 'sm7.wsgi.application'
+ASGI_APPLICATION = 'sm7.asgi.application'
 
 
 # Database
